@@ -1,0 +1,249 @@
+/* Mesob Habesha Kitchen – simple menu styles */
+:root {
+  --green: #1f4a32;
+  --green-dark: #163523;
+  --saffron: #e6a519;
+  --berbere: #a3281c;
+  --ink: #2b221c;
+  --muted: #6b6259;
+  --page: #f4f5f0;
+  --line: #cfcabd;
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, "Noto Sans Ethiopic", sans-serif;
+  background: var(--page);
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--green);
+  color: #fff;
+  padding: 56px 0 0;
+}
+
+.hero-am {
+  font-family: "Noto Serif Ethiopic", "Nyala", serif;
+  font-size: clamp(3.5rem, 12vw, 6.5rem);
+  line-height: 1;
+  color: var(--saffron);
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.hero-sub {
+  max-width: 52ch;
+  margin-top: 10px;
+  color: #d9e6dd;
+  font-size: 1.05rem;
+}
+
+.hero-info {
+  margin-top: 18px;
+  padding-bottom: 36px;
+  font-size: 0.9rem;
+  color: #b9d0c0;
+}
+
+/* woven basket stripe in the colours of the flag */
+.weave {
+  height: 14px;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--saffron) 0 24px, var(--berbere) 24px 48px, var(--green-dark) 48px 72px);
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--page);
+  border-bottom: 1px solid var(--line);
+}
+
+.tabs-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tab-list { display: flex; gap: 6px; overflow-x: auto; }
+
+.tab {
+  font: inherit;
+  font-weight: 600;
+  padding: 7px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab:hover { border-color: var(--green); }
+
+.tab.on {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.search input {
+  font: inherit;
+  font-size: 0.95rem;
+  width: 230px;
+  max-width: 100%;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.tab:focus-visible,
+.search input:focus-visible {
+  outline: 3px solid var(--saffron);
+  outline-offset: 2px;
+}
+
+/* ---------- Menu ---------- */
+main { padding-top: 12px; padding-bottom: 40px; }
+
+.category { padding-top: 32px; }
+
+.category h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  color: var(--green);
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--saffron);
+  margin-bottom: 8px;
+}
+
+.am {
+  font-family: "Noto Serif Ethiopic", "Nyala", serif;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.dishes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+}
+
+.dish { padding: 14px 0; }
+
+.dish-top {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.dish h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.dish h3 .am { font-weight: 400; margin-left: 4px; }
+
+.leader {
+  flex: 1;
+  border-bottom: 2px dotted var(--line);
+  min-width: 12px;
+  transform: translateY(-4px);
+}
+
+.price {
+  font-weight: 700;
+  color: var(--berbere);
+  white-space: nowrap;
+}
+
+.dish p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.93rem;
+  max-width: 44ch;
+}
+
+/* ---------- Tags ---------- */
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+
+.dot.vegan { background: #3e8f4f; }
+.dot.hot { background: var(--berbere); }
+
+.note {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.empty {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--green-dark);
+  color: #b9d0c0;
+  padding: 24px 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 680px) {
+  .dishes { grid-template-columns: 1fr; }
+  .hero { padding-top: 40px; }
+  .search { width: 100%; }
+  .search input { width: 100%; }
+}
+
+@media print {
+  .tabs, .weave, .search { display: none; }
+  .hero { background: none; color: #000; padding: 0; }
+  .hero-am, .hero-sub, .hero-info { color: #000; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
