@@ -17,7 +17,7 @@ export default function Home() {
         priority
         className="hero-img"
       />
-      <h1>Welcome to Mesob Habesha Kitchen</h1>
+      <h1>Welcome Addis Eates Habesha Kitchen</h1>
       <p>Slow-cooked stews, fresh injera and Ethiopian coffee, the way it is served at home.</p>
       <p>
         <Link href="/menu" className="btn">View the menu</Link>
